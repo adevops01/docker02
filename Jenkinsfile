@@ -18,5 +18,13 @@ pipeline {
                 sh 'docker build -t myapp:${BUILD_NUMBER} .'
             }
         }
+
+        stage('Trigger CD Pipeline') {
+            steps {
+                catchError(buildResult: 'SUCCESS') {
+                    build job: 'docker02-cd'
+                }
+            }
+        }
     }
 }
