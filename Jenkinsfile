@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
         REPO = 'moshab679/docker04'
-        TAG = 'tejaswini'
+        TAG = 'chetna'
     }
     stages {
         stage('Docker image Build') {
